@@ -6,11 +6,11 @@ CREATE TABLE `users` (
     UNIQUE KEY (`username`)
 );
 
-DROP TABLE IF EXISTS `contracts`;
-CREATE TABLE `contracts` (
+DROP TABLE IF EXISTS `contacts`;
+CREATE TABLE `contacts` (
     `id` int(11) NOT NULL auto_increment COMMENT 'Unique Contract ID',
     `user_id` int(11) NOT NULL COMMENT 'Unique User ID from `users` table',
-    `phone_number` varchar(10) NOT NULL COMMENT 'Contract Phone Number',
+    `phone_number` varchar(10) NOT NULL COMMENT 'Contract Phone Number (Assumed US Format: 7134979264)',
     `email_address` varchar(255) NOT NULL COMMENT 'Contract Email Address',
     `preferred_contact_method` tinyint(1) NOT NULL COMMENT 'Preferred Method of Contact (0: Phone, 1: Email)',
     PRIMARY KEY (`id`, `user_id`),
